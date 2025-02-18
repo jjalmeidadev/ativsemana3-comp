@@ -62,6 +62,12 @@
 
         //variável que guarda o avião e suas propriedades
         var aviao;
+
+        //variável que guarda números aleatórios
+        var array = [1, 5, 3];
+
+        //variável que randomiza valores do array e que é utilizada na aquisição de moedas como multiplicadora de maneira aleatoria
+        var random = array[Math.random() * array.length>>0];
        
 
         function preload() {
@@ -113,7 +119,7 @@
                 moeda.setVisible(false); //moeda invisível
                 var posicaoMoeda_Y = Phaser.Math.RND.between(50, 650);//sorteio de numero
                 moeda.setPosition(posicaoMoeda_Y, 100);//ajusta a posicao da moeda
-                pontuacao +=1;//soma pontuacao
+                pontuacao+=random;//soma pontuacao
                 placar.setText('Moedas:' + pontuacao);//atualiza texto do placar
                 moeda.setVisible(true); //ativa a visao da nova moeda
 
@@ -158,6 +164,7 @@
             fogo.setVisible(false);
         }
 
+      
 
     </script>
 </body>
